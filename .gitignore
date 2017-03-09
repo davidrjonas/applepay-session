@@ -1,0 +1,8 @@
+applepay-session
+main
+.DS_Store
+/bin
+/vendor
+/dist
+/certs
+.*.swp
