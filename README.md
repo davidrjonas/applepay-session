@@ -3,6 +3,38 @@ ApplePay Session
 
 Starts a new session with Apple Pay and outputs the response data.
 
+Usage
+-----
+
+```
+usage: applepay-session --merchid=MERCHID --domain=DOMAIN --displayname=DISPLAYNAME --cert=CERT --key=KEY --ca=CA [<flags>] <url>
+
+Flags:
+  --help                     Show context-sensitive help (also try --help-long
+                             and --help-man).
+  --merchid=MERCHID          Merchant id, e.g. merchant.com.example
+  --domain=DOMAIN            Domain name
+  --displayname=DISPLAYNAME  Display name
+  --cert=CERT                Client certificate file
+  --key=KEY                  Client certificate key file
+  --ca=CA                    Root CA file for validation
+  --version                  Show application version.
+
+Args:
+  <url>  New session url
+```
+
+Library Usage
+-------------
+
+See main.go for an example, but the interface is simple:
+
+```
+s := session.New(merchId, domainName, cert, caCertPool)
+
+session_data := s.Start(url, displayName)
+```
+
 Motivation
 ----------
 
